@@ -1,0 +1,349 @@
+*{
+margin: 0;
+padding: 0;
+font-family: 'Poppins','Times New Roman', Times, serif;
+box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: black;
+    color: white;    /*text color*/
+}
+
+#header{
+    width: 100%;
+    height: 100VH;
+    background-image: url(../imgs/background11.jpg);
+    padding: 10px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+#header p{
+    font-size: 17px;
+}
+.container{
+    padding: 10px 10%;  /*top-botttom and left-right*/
+}
+.container h2 span{
+    width: 150px;
+    color:rgb(233, 49, 49);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: xx-large;
+}
+
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;/*top-botttom and left-right*/
+}
+
+
+nav ul li a{
+color: #fff;
+text-decoration:none; /*to remove under line*/
+font-size: 20px;
+position: relative;  /*for absolue position as below position*/
+}
+
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #e73509;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.2s;
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+.text{
+    margin-top: 10%;
+    font-size: 20px;
+}
+.text h1{
+    font-size: 50px;
+    margin-top: 20px;
+}
+.text h1 span{
+    color: #ff004f;
+}
+
+/* ..........about........ */
+#about{
+    padding: 80px 0;
+    color:#fff;
+}
+.row{
+    display: flex;
+    justify-content: space-between;  /*spce b/w text and image*/
+    flex-wrap: wrap;
+}
+.about-col-1{
+    flex-basis: 35%;
+}
+.about-col-1 img{
+    height: 450px;
+    width: 450px;
+}
+.about-col-2{
+    flex-basis: 40%;
+}
+.sub-title{
+    font-size: 50px;
+    columns: white;
+}
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px; /*top left-right bottom*/
+}
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+.tab-links.active-link::after{
+    width: 100%;
+}
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+}
+.tab-contents ul li span{
+    color: #e84f7f;
+    font-size: 14px;
+}
+.tab-contents{
+    display: none;
+}
+.tab-contents.active-tab{
+    display: block;
+}
+
+/* ..........services.......... */
+.services{
+    padding: 30px 0;
+}
+.services-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.services-list div{
+    background: #262626;
+    padding: 40px;
+    font-size: 15px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s,transform 0.5s;
+}
+.services-list div i{
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+.services-list div h2{
+font-size: 30px;
+font-weight: 300;
+margin-bottom: 15px;
+}
+.services-list div a{
+text-decoration: none;
+color: #3ddf99;
+font-size: 15px;
+margin-top: 20px;
+display: inline-block;
+}
+.services-list div:hover{
+    background: #de5dea;
+    transform: translate(-10px);
+}
+#portfolio{
+    padding: 50px 0;
+}
+.work-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.work{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.work img{
+    width: 100% ;
+    height: 90%;
+    border-radius: 10px;
+    display: block;
+    transition: transform  0.5s;
+}
+.layer{
+    width: 100%;
+    height: 0;
+    background:linear-gradient(rgba(0,0,0,0,6), #ff004f);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+     transition: height 0.5s;
+}
+.layer h3{ 
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+.layer p{
+    background-color: #f73535;
+    border-radius: 10%;
+    /* background-color: transparent; */
+    
+}
+.layer a{
+    margin-top: 20px;
+    color: #3f32ef;
+    text-decoration: none;
+    font-size: 30px;
+    line-height: 60px;
+    background: #fff;
+    width: 20%;
+    height: 20%;
+    border-radius: 50%;
+    text-align: center;
+}
+.work:hover img{
+ transform: scale(1.1);
+}
+.work:hover .layer{
+    height: 100%  ;
+}
+.btn{
+    font-size: 20px;
+    display: block;
+    margin: 10px auto;
+    width: fit-content;
+    border: 1px solid #ff004f;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    transition: transform 0.5s;
+}
+.btn:hover{
+    background: #5bf195;
+    transform: scale(1.1);
+
+}
+/* .......contact....... */
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 60%;
+}
+.contact-left p{
+    margin-top:20px;
+    font-size: 20px;
+}
+.contact-left p i{
+color: #ff004f;
+margin-right: 15px; 
+font-size: 30px;
+}
+.social-icons{
+margin-top: 20px;
+}
+.social-icons a{
+text-decoration: none;
+font-size: 30px;
+margin-right: 15px;
+color: #86969b;
+display: inline-block;
+transition: transform 0.5s;
+}
+.social-icons a:hover{
+color: #dc2fff;
+transform: translateY(-5px);
+}
+.btn-btn2{
+    color: #fff;
+    display: block;
+    font-size: 20px;
+    margin-top: 20px; 
+    /* margin-left: 5px;
+    margin-right: 5px; */
+    border: 1px solid #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    background: #ff004f;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.btn-btn2:hover{
+    /* color: #dc2fff; */
+    /* transform: translateY(-5px); */
+    transform: scale(1.1);
+}
+.contact-right form{
+    width: 100%;
+}
+form input,form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 10px;
+    margin: 10px 0;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 5px;
+}
+.copy-right{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #3a96ff;
+    font-weight: 300;
+    margin-top: 20px; 
+}
+.copy-right i{
+    color: #0b0b0b; 
+}
+
+
